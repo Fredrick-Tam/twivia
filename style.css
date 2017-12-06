@@ -1,0 +1,52 @@
+/* stylesheet */
+
+body {
+    padding-bottom: 200px;
+}
+
+.area {
+	background-color: #0084FF;
+}
+
+.signuplink {
+   position:absolute;
+   top:5;
+   right:5;
+}
+
+#logo {
+	float: center;
+	height: 40px;
+	width: 150px;
+	display: block;
+    margin: auto;
+}
+
+#submit_button {
+	margin: auto;
+}
+
+#signup_submit_button {
+	margin: auto;
+}
+
+.range-boxes {
+	width: 400px;
+}
+
+.signup {
+	display: none;
+}
+
+#footer {
+	background-color: #0084FF;
+}
+
+.twittertextcolor {
+	color: #0084FF;
+}
+
+
+
+
+

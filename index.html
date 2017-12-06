@@ -1,0 +1,89 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- load jquery libraries -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+  <title> Twitter Trivia Game </title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<p class="signuplink"> First Time User? 
+<button id="register_button" type="submit" class="btn btn-info">Sign Up</button> 
+</p>
+<center> 
+  <p> 
+    <img id="logo" src="images/t1.png" width="100" height="60">
+    <br>
+    <br>
+    <img src="images/b3.png" width="400" height="270">
+    <br>
+    <p class="welcome_text">Welcome to Twivia! </p>
+  </div>
+  </p>
+</center>
+
+<div class="signup">
+    <div class="col-xs-8 col-md-offset-2">
+      <div class="panel panel-default" id=sign_in>
+        <div class="panel-heading">
+          <div class="panel-title text-center"> Sign Up</div>
+        </div>     
+        <div>
+        </div>
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="Username">Username:</label>
+              <input type="text" class="form-control chatinput" id="username" placeholder="Enter a username for your Twivia account" name="username">
+              <label for="Password">Password:</label>
+              <input type="password" class="form-control chatinput" placeholder="Enter a password for your Twivia account" name="Password" id="password">
+            </div>
+          </form>
+          <button id="signup_button" type="submit" class="btn btn-info">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="signin">
+    <div class="col-xs-8 col-md-offset-2">
+      <div class="panel panel-default" id=sign_in>
+        <div class="panel-heading">
+          <div class="panel-title text-center"> Sign In</div>
+        </div>     
+        <div>
+        </div>
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="Username">Username:</label>
+              <input type="text" class="form-control chatinput" id="username" placeholder="Enter the username for your Twivia account" name="username">
+              <label for="Password">Password:</label>
+              <input type="password" class="form-control chatinput" placeholder="Enter the password for your Twivia account" name="Password" id="password">
+            </div>
+          </form>
+          <button id="signin_button" type="submit" class="btn btn-info">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<div id="footer">
+  <div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left"> 2017 - Built with <span class="glyphicon glyphicon-heart"></span> By Top 2 but I'm not 2
+      </p>
+      </div>
+    </div>
+</div>
+
+</html>
