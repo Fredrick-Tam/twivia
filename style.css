@@ -46,7 +46,11 @@ body {
 	color: #0084FF;
 }
 
+#login_button {
+	display: none;
+}
 
-
-
+.empty-form1 {
+	display: none;
+}
 

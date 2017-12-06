@@ -8,6 +8,7 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
   <script src="script.js"></script>
 
   <title> Twitter Trivia Game </title>
@@ -16,7 +17,8 @@
 
 <body>
 <p class="signuplink"> First Time User? 
-<button id="register_button" type="submit" class="btn btn-info">Sign Up</button> 
+<button id="register_button" type="submit" class="btn btn-info">Sign Up</button>
+<button id="login_button" type="submit" class="btn btn-info">Sign In</button>  
 </p>
 <center> 
   <p> 
@@ -39,12 +41,15 @@
         <div>
         </div>
         <div class="panel-body">
+          <div class="empty-form1 alert alert-danger">
+            <strong>Error!</strong> Username and Password are required fields, cannot be empty.
+          </div>
           <form>
             <div class="form-group">
               <label for="Username">Username:</label>
-              <input type="text" class="form-control chatinput" id="username" placeholder="Enter a username for your Twivia account" name="username">
+              <input type="text" class="form-control chatinput" id="signup_username" placeholder="Enter a username for your Twivia account" name="username">
               <label for="Password">Password:</label>
-              <input type="password" class="form-control chatinput" placeholder="Enter a password for your Twivia account" name="Password" id="password">
+              <input type="password" class="form-control chatinput" placeholder="Enter a password for your Twivia account" name="Password" id="signup_password">
             </div>
           </form>
           <button id="signup_button" type="submit" class="btn btn-info">Submit</button>
@@ -62,12 +67,15 @@
         <div>
         </div>
         <div class="panel-body">
+        <div class="empty-form1 alert alert-danger">
+          <strong>Error!</strong> Username and Password are required fields, cannot be empty.
+        </div>
           <form>
             <div class="form-group">
               <label for="Username">Username:</label>
-              <input type="text" class="form-control chatinput" id="username" placeholder="Enter the username for your Twivia account" name="username">
+              <input type="text" class="form-control chatinput" id="signin_username" placeholder="Enter the username for your Twivia account" name="username">
               <label for="Password">Password:</label>
-              <input type="password" class="form-control chatinput" placeholder="Enter the password for your Twivia account" name="Password" id="password">
+              <input type="password" class="form-control chatinput" placeholder="Enter the password for your Twivia account" name="Password" id="signin_password">
             </div>
           </form>
           <button id="signin_button" type="submit" class="btn btn-info">Submit</button>
