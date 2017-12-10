@@ -14,12 +14,17 @@ body {
    right:5;
 }
 
+.firsttime {
+   float: right;
+   padding-right: 85px;
+}
+
 #logo {
 	float: center;
 	height: 40px;
 	width: 150px;
 	display: block;
-    margin: auto;
+    margin-left: 180px;
 }
 
 #submit_button {

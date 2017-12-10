@@ -7,13 +7,14 @@ $(document).ready(function() {
 	var signupform = $('.signup');
 	var signinform = $('.signin');
 	var signuplink = $('.signuplink');
+  var first_time = $('.firsttime')
 
 	register_button.click(function() {
 		signupform.css("display", "block");
 		signinform.css("display", "none");
     register_button.css("display", "none");
     login_button.css("display", "block");
-
+    first_time.css("display", "none");
 	});
 
   login_button.click(function() {
@@ -21,6 +22,7 @@ $(document).ready(function() {
     signinform.css("display", "block");
     register_button.css("display", "block");
     login_button.css("display", "none");
+    first_time.css("display", "block");
   })
 
 
