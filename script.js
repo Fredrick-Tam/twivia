@@ -12,6 +12,7 @@ $(document).ready(function() {
 	var signupform = $('.signup');
 	var signinform = $('.signin');
 	var signuplink = $('.signuplink');
+  var first_time = $('.firsttime')
 
 	var cb = new Codebird;
 	cb.setConsumerKey("DYOgeh59AX3eCyfpm42Mh2JVK", "S64PaNOgq7Dl2AULKitA5HH6SmJGUbYHPzFTpvabr2FbDPMiwr")
@@ -23,7 +24,7 @@ $(document).ready(function() {
 		signinform.css("display", "none");
     register_button.css("display", "none");
     login_button.css("display", "block");
-
+    first_time.css("display", "none");
 	});
 
   login_button.click(function() {
@@ -31,6 +32,7 @@ $(document).ready(function() {
     signinform.css("display", "block");
     register_button.css("display", "block");
     login_button.css("display", "none");
+    first_time.css("display", "block");
   })
 
 
