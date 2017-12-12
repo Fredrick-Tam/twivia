@@ -13,19 +13,11 @@ window.localStorage["score"] = "0";
 
 // keep track of unique tweets
 if (!window.localStorage.hasOwnProperty("unique_tweets")) {
-  console.log('init local storage of unique tweets');
   window.localStorage['unique_tweets'] = JSON.stringify([]);
-} else {
-  console.log('unique tweets already exists! contents: ', 
-    window.localStorage['unique_tweets']);
 }
 
 if (!window.localStorage.hasOwnProperty("wrong_options")) {
-  console.log('init local storage of wrong_options');
   window.localStorage['wrong_options'] = JSON.stringify([]);
-} else {
-  console.log('unique tweets already exists! contents: ', 
-    window.localStorage['wrong_options']);
 }
 
 function redirect() {
@@ -63,19 +55,23 @@ $(document).ready(function() {
         window.localStorage["answer"] = answer;
         window.localStorage["screen_name"] = reply[num].user.screen_name;
 
-        var i = category.indexOf(item);
-        if(i != -1) {
-          category.splice(i, 1);
-        }
-        var names = [];
-        while(ans < 3) {
-          var newlen = category.length;
-          var num = Math.floor((Math.random() * newlen) + 1);
-          console.log(num);
-          var tname = category[num];
+        var catset = new Set(category);
+        catset.delete(item);
 
+        var names = [];
+        //get iterator:
+        var iter = catset.values();
+        //get first entry:
+        var first = iter.next();
+        names[0] = first.value;
+        var second = iter.next();
+        names[1] = second.value;
+        var third = iter.next();
+        names[2] = third.value;
+        
+        while(ans < 3) {
           var new_params = {
-            screen_name: tname,
+            screen_name: names[ans],
             count: "1",
           };
           cb.__call(
@@ -85,7 +81,7 @@ $(document).ready(function() {
             if (err) {
               console.log("error response or timeout exceeded" + err.error);
             }
-            names.push(reply[0].user.name);
+            console.log(names);
             var wrong_options = JSON.parse(window.localStorage["wrong_options"]);
             wrong_options.push(reply[0].user.name);
             window.localStorage["wrong_options"] = JSON.stringify(wrong_options);
@@ -97,10 +93,6 @@ $(document).ready(function() {
           }
           ans = ans +1;
         }
-
-
-
-
       window.location.href = 'questions.html'; // redirect
     })
   }
