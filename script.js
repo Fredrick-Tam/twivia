@@ -14,7 +14,6 @@ $(document).ready(function() {
   var unique_tweets = [];
 
   function query(item) {
-    console.log(item);
   var num = Math.floor((Math.random() * 99) + 1);
   var params = {
       screen_name: item,
