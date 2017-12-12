@@ -88,7 +88,7 @@ $(document).ready(function() {
 				}
 
 				var len = reply.length -1;
-				var num = Math.floor((Math.random() * len) + 1);
+				var num = Math.floor((Math.random() * len));
 				var tweet = reply[num].text;
 				var answer = reply[num].user.name;
 
