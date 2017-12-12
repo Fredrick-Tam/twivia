@@ -38,7 +38,8 @@
 
 <!-- Question box  -->
 <div class="jumbotron">
-  <h1 class="display-3">Guess this tweet:</h1>
+  <h4 class="questionNo"> </h4>
+  <h3 class="display-3">Guess this tweet:</h3>
   <p class="lead">(select the tweet's author)</p>
   <hr class="my-4">
   <h2 id="tweet">"Michelle and I are delighted to congratulate Prince Harry and Meghan Markle on their engagement. We wish you a lifetime of joy and happiness together"</h2>
@@ -47,21 +48,21 @@
 <div class="row">
   <div class="col-6">
     <div class="list-group">
-  <button type="button" class="list-group-item list-group-item-info"> Barack Obama</button>
-  <button type="button" class="list-group-item list-group-item-info">Politician 2</button>
+  <button type="button" class="list-group-item list-group-item-info option" id="answer-1"> Barack Obama</button>
+  <button type="button" class="list-group-item list-group-item-info option" id="answer-2">Politician 2</button>
   </div>
   </div>
   <div class="col-6">
     <div class="list-group">
-  <button type="button" class="list-group-item list-group-item-info">Politician 3</button>
-  <button type="button" class="list-group-item list-group-item-info"> Barack Obama</button>
+  <button type="button" class="list-group-item list-group-item-info option" id="answer-3">Politician 3</button>
+  <button type="button" class="list-group-item list-group-item-info option" id="answer-4"> Barack Obama</button>
 </div>
   </div>
 </div>
 
 <center>
   <br>
-  <button id="play_again" type="submit" onclick ='query()' class="btn btn-info" style="height:75px;width:300px;font-size:35px;">Next Question!</button>
+  <button id="play_again" type="submit" class="btn btn-info" style="height:75px;width:300px;font-size:35px;">Next Question!</button>
 </center>
 
 </body>

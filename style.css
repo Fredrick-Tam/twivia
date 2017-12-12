@@ -4,6 +4,10 @@ body {
     padding-bottom: 360px;
 }
 
+button.selected {
+	background-color: #5cb85c;
+}
+
 .area {
 	background-color: #0084FF;
 }
@@ -12,6 +16,10 @@ body {
    position:absolute;
    top:5;
    right:5;
+}
+
+#tutorial {
+	text-align: center
 }
 
 .firsttime {
