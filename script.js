@@ -66,11 +66,14 @@ $(document).ready(function() {
 
   signup_button.click(function() {
     var signup_password = $('#signup_password').val();
+    var signup_password2 = $('#signup_password2').val();
     var signup_username = $('#signup_username').val();
 
-    if (signup_username == '' || signup_password == '') {
+    if (signup_username == '' || signup_password == '' || signup_password2 == '') {
       $('.empty-form1').css("display", "block");
       return;
+    } else if (signup_password != signup_password2) {
+      $('.empty-form2').css("display", "block");
     } else {
       store.set('user', { name: signup_username, password: signup_password });
       signupform.css("display", "none");
@@ -90,10 +93,11 @@ $(document).ready(function() {
       return;
     } else if (store.get('user').signin_username == '') {
       $('.empty-form2').css("display", "block");
-    } else {
+    } else if (store.get('user').name == signin_username && store.get('user').password == signin_password) {
       window.location = 'category.html';
+    } else if (store.get('user').name != signin_username || store.get('user').password != signin_password) {
+      $('.empty-form2').css("display", "block");
     }
-
   });
 
   var athlete = ["KingJames", "Cristiano", "rogerfederer", "TigerWoods", "serenawilliams", "kobebryant", "usainbolt", "StephenCurry30", "tbrady4", "KDTrey5", "FloydMayweather", "MichaelPhelps", "MariaSharapova", "LewisHamilton", "MickelsonHat" ];

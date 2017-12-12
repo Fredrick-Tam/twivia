@@ -17,6 +17,7 @@ body {
 .firsttime {
    float: right;
    padding-right: 85px;
+   padding-top: 10px;
 }
 
 #logo2 {
@@ -63,6 +64,14 @@ body {
 }
 
 .empty-form1 {
+	display: none;
+}
+
+.empty-form2 {
+	display: none;
+}
+
+.empty-form3 {
 	display: none;
 }
 

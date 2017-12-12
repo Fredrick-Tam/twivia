@@ -47,6 +47,11 @@
           <div class="empty-form1 alert alert-danger">
             <strong>Error!</strong> Username and Password are required fields, cannot be empty.
           </div>
+
+          <div class="empty-form2 alert alert-danger">
+            <strong>Error!</strong> Passwords do not match. Make sure you enter your desired password correctly twice .
+          </div>
+
           <form>
             <div class="form-group">
               <label for="Username">Username:</label>
@@ -54,7 +59,7 @@
               <label for="Password">Password:</label>
               <input type="password" class="form-control chatinput" placeholder="Enter a password for your Twivia account" name="Password" id="signup_password">
               <label for="ConfirmPassword">Confirm Password:</label>
-              <input type="password" class="form-control chatinput" placeholder="Confirm password for your Twivia account" name="Password" id="signup_password">
+              <input type="password" class="form-control chatinput" placeholder="Confirm password for your Twivia account" name="Password" id="signup_password2">
             </div>
           </form>
           <button id="signup_button" type="submit" class="btn btn-info">Submit</button>
@@ -74,6 +79,9 @@
         <div class="panel-body">
         <div class="empty-form1 alert alert-danger">
           <strong>Error!</strong> Username and Password are required fields, cannot be empty.
+        </div>
+        <div class="empty-form2 alert alert-danger">
+          <strong>Error!</strong> Incorrect Username and/or Password. Try Again.
         </div>
           <form>
             <div class="form-group">
