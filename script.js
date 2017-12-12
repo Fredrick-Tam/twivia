@@ -42,7 +42,7 @@ $(document).ready(function() {
           console.log("error response or timeout exceeded" + err.error);
         }
         var len = reply.length -1;
-        var num = Math.floor((Math.random() * len) + 1);
+        var num = Math.floor((Math.random() * len));
         var tweet = reply[num].text;
         var answer = reply[num].user.name;
 
@@ -55,6 +55,7 @@ $(document).ready(function() {
         window.localStorage["answer"] = answer;
         window.localStorage["screen_name"] = reply[num].user.screen_name;
 
+        console.log(category);
         var catset = new Set(category);
         catset.delete(item);
 
@@ -164,7 +165,7 @@ $(document).ready(function() {
   var musician_button = $('#music');
   var politician_button = $('#politician');
   var actor_button = $('#actor');
-  var reality_star_button = $('#realitystar');
+  var reality_star_button = $('#reality');
   var random_button = $('#random');
 
   // query
@@ -182,7 +183,7 @@ $(document).ready(function() {
 
   politician_button.click(function() {
     var item = poli[Math.floor(Math.random()*poli.length)];
-    query(item, politician);
+    query(item, poli);
   });
 
   actor_button.click(function() {
