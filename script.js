@@ -1,23 +1,28 @@
 var cb = new Codebird;
 cb.setConsumerKey("DYOgeh59AX3eCyfpm42Mh2JVK", "S64PaNOgq7Dl2AULKitA5HH6SmJGUbYHPzFTpvabr2FbDPMiwr")
-
+var athName = ["Lebron James", "Cristiano Ronaldo", "Roger Federer", "Tiger Woords", "Serena Williams", "Kobe Bryant", "Usain Bolt", "Stephen Curry", "Tom Brady", "Kevin Durant", "Floyd MayWeather", "Michael Phelps", "Maria Sharapoca", "Lewis Hamilton", "Phil Mickelson"];
 var athlete = ["KingJames", "Cristiano", "rogerfederer", "TigerWoods", "serenawilliams", "kobebryant", "usainbolt", "StephenCurry30", "tbrady4", "KDTrey5", "FloydMayweather", "MichaelPhelps", "MariaSharapova", "LewisHamilton", "MickelsonHat" ];
+var muName = ["Beyonce", "Taylor Swift", "Rihanna", "Justin Bieber", "Madonna", "Shakira", "Bruce Springsteen", "JayZ", "Paul McCartney", "Drake", "Adele", "Lady Gala", "Selena Gomez", "Jennifer Lopez", "Bruno Mars", "Elton John"];
 var music = ["Beyonce", "taylorswift13","rihanna", "justinbieber‏", "Madonna", "shakira","springsteen", "S_C_", "PaulMcCartney", "Drake", "Adele", "selenagomez", "ladygaga", "JLo", "eltonofficial"];
+var relNames = ["Black Chyna", "Kate Gossein", "Kenda Wilkinson", "Nicole Polizzi", "Heidi Montag", "Kendall Jenner", "Nene Leakes", "Simon Cowell", "Betheeny Frankel", "Kylie Jenner", "Kris Jener", "Ryan Seacrest", "Kourtney Kardashian", "Khloe Kardashian", "Kim Kardashian"];
 var realStar = ["BLACCHYNA","KendraWilkinson", "heidimontag", "snooki", "Kateplusmy8","KendallJenner‏", "NeNeLeakes","SimonCowell", "RyanSeacrest", "Bethenny","KylieJenner", "khloekardashian","KimKardashian", "kourtneykardash", "KrisJenner"];
+var actNames = ["Dwayne Johnson", "Jim Carrey", "Tom Hanks", "Robert Downey Jr", "Samuel L.Jackson", "Tom Cruise", "Zendaya", "Leonardo DiCaprio", "Ben Affleck", "James Franco", "Emma Watson", "Jaden Smith", "Kristen Bell", "Halle Berry", "Viola Davis"];
 var actor = ["TheRock", "tomhanks", "JimCarrey", "RobertDowneyJr","SamuelLJackson", "TomCruise", "LeoDiCaprio","BenAffleck", "Zendaya", "DisasterArtist", "EmmaWatson", "officialjaden", "IMKristenBell", "halleberry", "violadavis" ];
+var poliNames = ["Donald Trump", "Barack Obama", "Hiliary Clinton", "Pope Francis", "Narendra Modi", "Arnold Schwarzenegger", "Michelle Obama", "Bill Clinton", "David Cameron", "Sadiq Khan", "Theresa May", "Roy Moore", "Al Franken", "Sarah Palin"];
 var poli = ["realDonaldTrump", "BarackObama", "HillaryClinton", "narendramodi ‏", "Pontifex", "MichelleObama", "BillClinton", "David_Cameron", "Number10gov", "MayorofLondon", "Schwarzenegger", "MooreSenate", "alfranken", "SarahPalinUSA", "CondoleezzaRice"];
+var ranNames = ["Lebron James", "Cristiano Ronaldo", "Roger Federer", "Tiger Woords", "Serena Williams", "kobebryant", "usainbolt", "StephenCurry30", "tbrady4", "KDTrey5", "FloydMayweather", "MichaelPhelps", "MariaSharapova", "LewisHamilton", "MickelsonHat", "Beyonce", "Taylor Swift", "Rihanna", "Justin Bieber", "Madonna", "Shakira", "Bruce Springsteen", "JayZ", "Paul McCartney", "TheRock", "tomhanks", "JimCarrey", "RobertDowneyJr","SamuelLJackson", "TomCruise", "LeoDiCaprio","BenAffleck", "Zendaya", "DisasterArtist", "EmmaWatson", "officialjaden", "IMKristenBell", "halleberry", "violadavis"];
 var random = ["KingJames", "Cristiano", "rogerfederer", "TigerWoods", "serenawilliams", "kobebryant", "usainbolt", "StephenCurry30", "tbrady4", "KDTrey5", "FloydMayweather", "MichaelPhelps", "MariaSharapova", "LewisHamilton", "MickelsonHat", "Beyonce", "taylorswift13","rihanna", "justinbieber‏", "Madonna", "shakira","springsteen", "S_C_",
 "PaulMcCartney", "TheRock", "tomhanks", "JimCarrey", "RobertDowneyJr","SamuelLJackson", "TomCruise", "LeoDiCaprio","BenAffleck", "Zendaya", "DisasterArtist", "EmmaWatson", "officialjaden", "IMKristenBell", "halleberry", "violadavis" , "Drake", "Adele", "selenagomez", "ladygaga", "JLo", "eltonofficial", "BLACCHYNA","KendraWilkinson", "heidimontag", "snooki", "Kateplusmy8","KendallJenner‏", "NeNeLeakes","SimonCowell", "RyanSeacrest", "Bethenny","KylieJenner", "khloekardashian","KimKardashian", "kourtneykardash", "KrisJenner"];
 var ans = 0;
 window.localStorage["score"] = "0";
+var Wrong1;
+var Wrong2;
+var Wrong3;
+
 
 // keep track of unique tweets
 if (!window.localStorage.hasOwnProperty("unique_tweets")) {
   window.localStorage['unique_tweets'] = JSON.stringify([]);
-}
-
-if (!window.localStorage.hasOwnProperty("wrong_options")) {
-  window.localStorage['wrong_options'] = JSON.stringify([]);
 }
 
 function redirect() {
@@ -27,7 +32,7 @@ function redirect() {
 
 $(document).ready(function() {
 
-  function query(item, category) {
+  function query(item, category, names_list) {
     var params = {
       screen_name: item,
       count: "200",
@@ -45,6 +50,28 @@ $(document).ready(function() {
         var num = Math.floor((Math.random() * len));
         var tweet = reply[num].text;
         var answer = reply[num].user.name;
+        var name = [];
+
+        while(name.length < 3) {
+          var possible = names_list[Math.floor((Math.random()* names_list.length))-1];
+          if(name.length == 0){
+            if(possible !=answer) {
+              name.push(possible);
+            }
+          }
+          else{
+          if(possible !=answer && name.indexOf(possible) < 0) {
+            name.push(possible)
+            console.log(name)
+          }
+        }
+      }
+
+      window.localStorage["wrong1"] = name[0];
+      window.localStorage["wrong2"] = name[1];
+      window.localStorage["wrong3"] = name[2];
+
+
 
         var unique_tweets = JSON.parse(window.localStorage["unique_tweets"]);
         unique_tweets.push(tweet);
@@ -54,45 +81,7 @@ $(document).ready(function() {
         window.localStorage["question_no"] = 1;
         window.localStorage["answer"] = answer;
         window.localStorage["screen_name"] = reply[num].user.screen_name;
-
-        var catset = new Set(category);
-        catset.delete(item);
-
-        var names = [];
-        //get iterator:
-        var iter = catset.values();
-        //get first entry:
-        var first = iter.next();
-        names[0] = first.value;
-        var second = iter.next();
-        names[1] = second.value;
-        var third = iter.next();
-        names[2] = third.value;
-        
-        while(ans < 3) {
-          var new_params = {
-            screen_name: names[ans],
-            count: "1",
-          };
-          cb.__call(
-           "statuses_userTimeline",
-           new_params,
-           function (reply, rate, err) {
-            if (err) {
-              console.log("error response or timeout exceeded" + err.error);
-            }
-            console.log(names);
-            var wrong_options = JSON.parse(window.localStorage["wrong_options"]);
-            wrong_options.push(reply[0].user.name);
-            window.localStorage["wrong_options"] = JSON.stringify(wrong_options);
-            
-          })
-          var i = category.indexOf(names[ans]);
-          if(i != -1) {
-            category.splice(i, 1);
-          }
-          ans = ans +1;
-        }
+         
       window.location.href = 'questions.html'; // redirect
     })
   }
@@ -172,32 +161,32 @@ $(document).ready(function() {
   athlete_button.click(function(e) {
     e.preventDefault();
     var item = athlete[Math.floor(Math.random()*athlete.length)];
-    query(item,athlete);
+    query(item,athlete,athName);
   });
 
   musician_button.click(function() {
     var item = music[Math.floor(Math.random()*music.length)];
-    query(item, music);
+    query(item, music, muName);
   });
 
   politician_button.click(function() {
     var item = poli[Math.floor(Math.random()*poli.length)];
-    query(item, poli);
+    query(item, poli, poliNames);
   });
 
   actor_button.click(function() {
     var item = actor[Math.floor(Math.random()*actor.length)];
-    query(item, actor);
+    query(item, actor, actNames);
   });
 
   reality_star_button.click(function() {
     var item = realStar[Math.floor(Math.random()*realStar.length)];
-    query(item, realStar);
+    query(item, realStar, relNames);
   });
 
   random_button.click(function() {
     var item = random[Math.floor(Math.random()*random.length)];
-    query(item, random);
+    query(item, random, ranNames);
   });
 
 });
