@@ -63,13 +63,13 @@ $(document).ready(function() {
 		$("#next-q").css("display", "none");
 		question_number = Number(question_number) + 1;
 		localStorage["question_no"] = question_number;
-		console.log(score);
+
 		if (question_number > 10) {
-			if (localStorage["score"] < 4) {
-			window.location = 'great.html';
-			} else if (localStorage["score"] > 3 && localStorage["score"] < 8) {
+			if (score < 4) {
+			window.location = 'poor.html';
+			} else if (score > 3 && score < 8) {
 			window.location = 'decent.html';
-			} else if (localStorage["score"] > 8) {
+			} else if (score > 8) {
 			window.location = 'great.html';	
 			}
 		}
