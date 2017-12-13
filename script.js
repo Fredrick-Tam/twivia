@@ -25,6 +25,11 @@ if (!window.localStorage.hasOwnProperty("unique_tweets")) {
   window.localStorage['unique_tweets'] = JSON.stringify([]);
 }
 
+function signout() {
+  var url = "index.html";
+  window.location = url;
+}
+
 function redirect() {
   var url = "category.html";
   window.location = url;
@@ -46,6 +51,9 @@ $(document).ready(function() {
         if (err) {
           console.log("error response or timeout exceeded" + err.error);
         }
+        if (reply == "undefined") {
+          console.log("hello");
+        }
         var len = reply.length -1;
         var num = Math.floor((Math.random() * len));
         var tweet = reply[num].text;
@@ -53,7 +61,7 @@ $(document).ready(function() {
         var name = [];
 
         while(name.length < 3) {
-          var possible = names_list[Math.floor((Math.random()* names_list.length))-1];
+          var possible = names_list[Math.floor((Math.random()* names_list.length))];
           if(name.length == 0){
             if(possible !=answer) {
               name.push(possible);

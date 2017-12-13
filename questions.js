@@ -191,6 +191,9 @@ $(document).ready(function() {
 		else if (music.indexOf(screen_name) > -1) {
 			array = music.slice();
 			array2 = muName.slice();
+		} else {
+			array = random.slice();
+			array2 = ranNames.slice();
 		}
 
 		var item = array[Math.floor(Math.random()*array.length)];
