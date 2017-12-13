@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$(".musician").text("Musician High Score: " + musi);
 	$(".actor").text("Actor High Score: " + act);
 	$(".politician").text("Politician High Score: " + pol);
-	$(".realitystar").text("Athelete High Score: " + real);
+	$(".realitystar").text("Reality Star High Score: " + real);
 	$(".random").text("Random High Score: " + rand);
 
 });
