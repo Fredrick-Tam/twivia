@@ -42,21 +42,15 @@ $(document).ready(function() {
 	$(".questionNo").text("Question " + question_number);
 	var wrong_options = JSON.parse(localStorage["wrong_options"]);
 	$("#tweet").text(tweet);
-
+	$(".score").text("Score: " + score);
 	var answers = ["#answer-1", "#answer-2", "#answer-3", "#answer-4"];
 	var len = answers.length;
 	var answer_div = Math.floor(Math.random()*3) + 1;
-
-	var i = answers.indexOf(answer_div);
-	if(i != -1) {
-		answers.splice(i, 1);
-	}
 
 	$(answers[0]).text(wrong_options[0]);
 	$(answers[1]).text(wrong_options[1]);
 	$(answers[2]).text(wrong_options[2]);
 	$(answers[answer_div]).text(answer);
-
 
 	function query(item, category) {
 		// update question number
@@ -100,6 +94,7 @@ $(document).ready(function() {
 				window.localStorage["answer"] = answer;
 				target.removeClass("selected");
 				target.removeClass("not-selected");
+				$("button.option").removeClass("selected");
 				var catset = new Set(category);
         		catset.delete(item);
 
@@ -113,8 +108,7 @@ $(document).ready(function() {
 		        names[1] = second.value;
 		        var third = iter.next();
 		        names[2] = third.value;
-		        console.log(names);
-		        
+		        target.removeClass("selected");
 		        while(ans < 3) {
 		          var new_params = {
 		            screen_name: names[ans],
@@ -173,6 +167,7 @@ $(document).ready(function() {
 			localStorage["score"] = score.toString();
 		} else {
 			target.addClass("not-selected");
+			$("button.option:contains("+answer+")").addClass("selected");
 		}
 
 		var array = [];

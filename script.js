@@ -55,7 +55,6 @@ $(document).ready(function() {
         window.localStorage["answer"] = answer;
         window.localStorage["screen_name"] = reply[num].user.screen_name;
 
-        console.log(category);
         var catset = new Set(category);
         catset.delete(item);
 
