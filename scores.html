@@ -9,9 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.js"></script>
   <script src="script.js"></script>
   <script src="questions.js"></script>
+  <script src="scores.js"></script>
 
   <title> Twitter Trivia Game </title>
   <meta name=viewport content="width=device-width, initial-scale=1">
@@ -19,20 +20,22 @@
 
 <body>
 <button id="signout_button" type="submit" onclick="signout()" class="btn btn-info">Sign Out</button>
-<button id="signout_button" type="submit" onclick="scores()" class="btn btn-info">
-Your High Scores</button>
 <center>
-  <p>
-    <img id="logo" src="images/t1.png" width="100" height="60">
-    <br>
-    <br>
-    <img src="thumbs_up.jpg" alt="Thumbs up" height = "250">
-  </p>
-  <h1>You guessed 8-10 tweets correctly</h1>
-  <h1>Great Job!</h1>
-  <br>
-  <br>
-  <button id="play_again" type="submit" onClick="redirect()" class="btn btn-info" style="height:75px;width:300px;font-size:35px;">Play Again!</button>
+<img id="logo" src="images/t1.png">
+<h3 class="athelete"> Athelete High Score: </h3>
+<br>
+<h3 class="musician"> Musician High Score: </h3>
+<br>
+<h3 class="actor"> Actor High Score: </h3>
+<br>
+<h3 class="politician"> Politician High Score: </h3>
+<br>
+<h3 class="realitystar">  Reality Star High Score:</h3>
+<br>
+<h3 class="random"> Random High Score: </h3>
+
+
+<button id="play_again" type="submit" onClick="redirect()" class="btn btn-info" style="height:75px;width:300px;font-size:35px;">Play Again!</button>
 </center>
 
 </body>

@@ -20,6 +20,10 @@ function redirect() {
   window.location = url;
 }
 
+function scores() {
+  var url = "scores.html";
+  window.location = url;
+}
 
 var question_number = localStorage["question_no"];
 var choice1 = $("#answer-1");
@@ -32,6 +36,7 @@ if (!window.localStorage.hasOwnProperty("score")) {
 } else { 
     console.log(localStorage["score"]);
 }
+
 
 $(document).ready(function() {
 	var user_choice = "";
@@ -74,6 +79,23 @@ $(document).ready(function() {
 			}
 		}
 
+		if (athlete.indexOf(item) > -1 && score > localStorage["ath_score"]) {
+			localStorage["ath_score"] = score;
+		} else if (music.indexOf(item) > -1 && score > localStorage["musi_score"]) {
+			localStorage["musi_score"] = score;
+		} else if (realStar.indexOf(item) > -1 && score > localStorage["real_score"]) {
+			localStorage["real_score"] = score;
+		} else if (poli.indexOf(item) > -1 && score > localStorage["pol_score"]) {
+			localStorage["pol_score"] = score;
+		} else if (actor.indexOf(item) > -1 && score > localStorage["act_score"]) {
+			localStorage["act_score"] = score;
+		} else if (random.indexOf(item) > -1 && score > localStorage["rand_score"]) {
+			localStorage["rand_score"] = score;
+		}
+
+		console.log(localStorage);
+
+
 		var params = {
 			screen_name: item,
 			count: "200",
@@ -111,7 +133,6 @@ $(document).ready(function() {
 		      window.localStorage["wrong1"] = name[0];
 		      window.localStorage["wrong2"] = name[1];
 		      window.localStorage["wrong3"] = name[2];
-		      console.log(localStorage);
 
 				var unique_tweets = JSON.parse(window.localStorage["unique_tweets"]);
 				unique_tweets.push(tweet);

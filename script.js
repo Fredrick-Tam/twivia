@@ -19,7 +19,29 @@ var Wrong1;
 var Wrong2;
 var Wrong3;
 
+if (!window.localStorage.hasOwnProperty("ath_score")) {
+  window.localStorage['ath_score'] = "0";
+} 
 
+if (!window.localStorage.hasOwnProperty("rand_score")) {
+  localStorage["rand_score"] = "0";
+}
+
+if (!window.localStorage.hasOwnProperty("real_score")) {
+  localStorage["real_score"] = "0";
+}
+
+if (!window.localStorage.hasOwnProperty("pol_score")) {
+  localStorage["pol_score"] = "0";
+}
+
+if (!window.localStorage.hasOwnProperty("musi_score")) {
+  localStorage["musi_score"] = "0";
+}
+
+if (!window.localStorage.hasOwnProperty("act_score")) {
+  localStorage["act_score"] = "0";
+}
 // keep track of unique tweets
 if (!window.localStorage.hasOwnProperty("unique_tweets")) {
   window.localStorage['unique_tweets'] = JSON.stringify([]);
@@ -32,6 +54,11 @@ function signout() {
 
 function redirect() {
   var url = "category.html";
+  window.location = url;
+}
+
+function scores() {
+  var url = "scores.html";
   window.location = url;
 }
 
